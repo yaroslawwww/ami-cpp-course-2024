@@ -1,0 +1,6 @@
+FROM cr.yandex/crppmgcujiph4hvf0dup/hse-cxx-build:latest
+
+COPY . /opt/shad
+
+RUN find /opt/shad/private -name 'solution' | xargs rm -rf
+RUN find /opt/shad/private -name '*.cpp' -or -name '*.h' | xargs chmod o-rwx
